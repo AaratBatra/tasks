@@ -1,113 +1,180 @@
+import Head from "next/head";
+import React from "react";
 import Image from "next/image";
+import logo from "./../../public/logo.png";
+import Sphere from "../../public/sphere.svg";
+import Shield from "../../public/shield.svg";
+import circles from "../../public/circles.svg";
+import bg_gradient from "../../public/bg-gradient-top.svg";
+import { FaApple, FaAndroid } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div>
+      <Head>
+        <title>Flashooot Landing Page</title>
+        <meta
+          name="description"
+          content="Collaborate, Work, and Earn with Flashooot."
         />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div
+        className="relative bg-black text-white"
+        style={{
+          backgroundImage: `url(${bg_gradient.src}), url(${circles.src})`,
+          backgroundPosition: "left top, center",
+          backgroundRepeat: "no-repeat, no-repeat",
+        }}
+      >
+        <header className="flex justify-between items-center p-4">
+          <div className="w-1/3"></div>{" "}
+          {/* Empty space to push the logo to the center */}
+          <div className="flex justify-center w-1/3">
+            <Image src={logo} alt="FLASHOOT Logo" width={184} height={61} />{" "}
+            {/* Set the exact dimensions */}
+          </div>
+          <div className="w-1/3 flex justify-end"></div>
+        </header>
+
+        <section className="h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+            Collaborate <span className="text-red-500">{">"}</span> Work{" "}
+            <span className="text-red-500">{">"}</span> Earn
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-500 mb-6">
+            Sign up, get verified, and start receiving bookings.
+            <br />
+            Complete shoots, upload your work, and get paid promptly.
+          </p>
+          <button className="bg-black text-red-500 border border-red-500 px-6 py-3 rounded-full text-lg sm:text-xl lg:text-2xl transition ease-in-out duration-300 hover:bg-red-500 hover:text-white">
+            Partner Today
+          </button>
+        </section>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section className="h-screen flex flex-col items-center justify-center text-center text-white bg-black px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-md lg:text-md font-bold mb-4 text-red-500">
+          How it works
+        </h2>
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10">
+          Let’s Take You Through a <br /> Step-by-Step Process
+        </h3>
+        <div className="flex flex-col lg:flex-row justify-around items-center lg:items-start space-y-10 lg:space-y-0 lg:space-x-10">
+          <div className="text-center max-w-xs">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 flex items-center justify-center bg-black text-white border border-white rounded-full text-2xl font-bold">
+                1
+              </div>
+            </div>
+            <div className="text-2xl font-bold mb-4">
+              Onboard and Get Verified
+            </div>
+            <p>
+              Create an account with your details and upload verification
+              documents. Once approved, you'll receive a confirmation email and
+              become an official partner.
+            </p>
+          </div>
+          <div className="text-center max-w-xs">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 flex items-center justify-center bg-black text-white border border-white rounded-full text-2xl font-bold">
+                2
+              </div>
+            </div>
+            <div className="text-2xl font-bold mb-4">Receive Bookings</div>
+            <p>
+              Get booking notifications via the Flashooot app with job details.
+              Review and accept bookings that fit your schedule, then confirm
+              your availability.
+            </p>
+          </div>
+          <div className="text-center max-w-xs">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 flex items-center justify-center bg-black text-white border border-white rounded-full text-2xl font-bold">
+                3
+              </div>
+            </div>
+            <div className="text-2xl font-bold mb-4">Shoot and Earn</div>
+            <p>
+              Arrive on time with your gear, understand client needs, and
+              deliver high-quality work. Upload the final files for client
+              review; once approved, you'll receive prompt payment.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      <section
+        className="relative h-screen flex flex-col lg:flex-row items-center justify-center text-center text-white bg-black px-4 sm:px-6 lg:px-36"
+        style={{
+          backgroundImage: `url(${circles.src}), url(${bg_gradient.src})`,
+          backgroundPosition: "center, left top",
+          backgroundRepeat: "no-repeat, no-repeat",
+        }}
+      >
+        <div className="relative flex flex-col items-center lg:items-start lg:w-1/2 space-y-8 px-4 lg:px-0">
+          <div className="relative">
+            <Image src={Shield} alt="Shield" className="relative z-10" />
+            <Image
+              src={Sphere}
+              alt="Sphere"
+              className="absolute left-[-20%] top-1/2 transform -translate-y-1/2 z-0"
+            />
+          </div>
+        </div>
+        <div className="max-w-2xl lg:w-1/2 mt-10 lg:mt-0 px-4 lg:px-0">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            24/7 access to full service customer support
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="text-lg sm:text-xl lg:text-2xl">
+            Access round-the-clock customer assistance for all your needs. Our
+            dedicated team ensures help is always available when you need it.
           </p>
-        </a>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section className="h-screen flex flex-col items-center justify-center text-center text-white bg-black px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          Onboard with Us Today and Get Pre-Launch Partner Benefits
+        </h2>
+        <p className="text-lg sm:text-xl lg:text-2xl mb-6">
+          Join us now and enjoy perks reserved for our early partners. Pay a Rs.
+          499 onboarding fee, reimbursed to your wallet upon successful
+          registration.
+        </p>
+        <button className="bg-red-500 px-6 py-3 rounded text-lg sm:text-xl lg:text-2xl">
+          Pay Rs. 499 Today
+        </button>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <footer className="text-white py-6 bg-black">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex flex-col items-start space-y-4">
+            <Image src={logo} alt="Logo" width={100} height={100} />
+            <p className="text-left">
+              Flashoot Partner is a platform or service that connects <br />
+              Reelmakers with Clients looking for Professional Video Services.
+            </p>
+            <p>
+              © 2024 Flashooot, a product of konchamkoote Pvt. Ltd. All Rights
+              Reserved.
+            </p>
+          </div>
+          <div className="flex flex-col space-x-4">
+            <h2>Available on all platforms</h2>
+            <div>
+              <a href="#" className="bg-gray-700 p-2 rounded">
+                <FaApple size={20} />
+              </a>
+              <a href="#" className="bg-gray-700 p-2 rounded">
+                <FaAndroid size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
