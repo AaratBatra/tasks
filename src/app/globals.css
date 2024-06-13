@@ -31,3 +31,14 @@ body {
     text-wrap: balance;
   }
 }
+
+@media screen and (max-width: 800px) {
+  #bgOnboardGradient {
+    background-size: 120% !important;
+    top: 0 !important;
+    background-position: top right !important;
+  }
+  #shield {
+    margin-left: 10% !important;
+  }
+}
